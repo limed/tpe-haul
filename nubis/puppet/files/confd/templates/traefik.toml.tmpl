@@ -56,114 +56,11 @@ onHostRule = false
 {{ if eq $env "prod" }}
 
 [[acme.domains]]
-main = "tlscanary.mozilla.org"
-sans = [
-  "tlscanary-haul.mozilla.org"
-]
-
-[[acme.domains]]
-main = "static.mozilla.com"
-sans = [
-  "static-haul.mozilla.com"
-]
-
-[[acme.domains]]
-main = "website-archive.mozilla.org"
-sans = [
-  "website-archive-haul.mozilla.org"
-]
-
-[[acme.domains]]
-main = "www-archive.mozilla.org"
-sans = [
-  "www-archive-haul.mozilla.org"
-]
-
-[[acme.domains]]
-main = "planet.mozilla.org"
-sans = [
-  "planet-haul.mozilla.org"
-]
-
-[[acme.domains]]
-main = "krakenbenchmark.mozilla.org"
-
-[[acme.domains]]
-main = "www.mozilla.net"
-sans = [
-  "apps.mozillalabs.com",
-  "events.mozspaces.org",
-  "arewefunyet.com",
-  "arewestableyet.com",
-  "boot2gecko.org",
-  "contributejson.org",
-  "detodosparatodos.com"
-]
+main = "tpe.mozilla.org"
 
 {{ else }}
 
 [[acme.domains]]
-main = "tlscanary.allizom.org"
-sans = [
-  "tlscanary-haul.allizom.org"
-]
-
-[[acme.domains]]
-main = "static.allizom.org"
-sans = [
-  "static-haul.allizom.org"
-]
-
-[[acme.domains]]
-main = "website-archive.allizom.org"
-sans = [
-  "website-archive-haul.allizom.org"
-]
-
-[[acme.domains]]
-main = "www-archive.allizom.org"
-sans = [
-  "www-archive-haul.allizom.org"
-]
-
-[[acme.domains]]
-main = "bugzilla-haul.allizom.org"
-
-[[acme.domains]]
-main = "itisatracker-haul.allizom.org"
-
-[[acme.domains]]
-main = "nightly-haul.allizom.org"
-
-[[acme.domains]]
-main = "planet.allizom.org"
-sans = [
-  "planet-haul.allizom.org"
-]
-
-[[acme.domains]]
-main = "planet-bugzilla.allizom.org"
-
-[[acme.domains]]
-main = "publicsuffix-haul.allizom.org"
-
-[[acme.domains]]
-main = "seamonkey-project-haul.allizom.org"
-
-[[acme.domains]]
-main = "start-haul.allizom.org"
-
-[[acme.domains]]
-main = "krakenbenchmark.allizom.org"
-
-[[acme.domains]]
-main = "redirecttest.allizom.org"
-sans = [
-  "prs.paas.allizom.org",
-  "events.mozspaces.org"
-]
+main = "tpe.allizom.org"
 
 {{ end }}
-
-# Redirects
-#www.mozilla.net "apps.mozillalabs.com","events.mozspaces.org","krakenbenchmark.mozilla.org",prs.paas.allizom.org, redirecttest.allizom.org
