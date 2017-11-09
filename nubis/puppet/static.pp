@@ -33,7 +33,7 @@ define nubis::static (
     redirectmatch_regexp => $redirectmatch_regexp,
     redirectmatch_dest   => $redirectmatch_dest,
 
-    docroot              => "/data/haul/${title}",
+    docroot              => "/data/tpe-haul/${title}",
 
     directoryindex       => join(concat($indexes, $default_indexes), ' '),
 
