@@ -11,7 +11,7 @@ variable "environment" {
 }
 
 variable "service_name" {
-  default = "haul"
+  default = "tpe-haul"
 }
 
 variable "ami" {}
