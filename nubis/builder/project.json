@@ -3,6 +3,7 @@
     "builders": [
       "amazon-ebs-ubuntu"
     ],
+    "ami_regions": "",
     "project_description": "nubis tpe haul",
     "project_name": "tpe-haul",
     "source_ami_project_version": "v2.0.1",

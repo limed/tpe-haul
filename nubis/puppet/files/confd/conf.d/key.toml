@@ -1,0 +1,15 @@
+[template]
+src = "site.key.tmpl"
+dest = "/etc/traefik/site.key.tmpl"
+prefix = "/%%STACK%%/%%ENVIRONMENT%%"
+
+uid = 0
+gid = 0
+mode = "0640"
+
+keys = [
+    "/config/*",
+    "/config"
+]
+
+reload_cmd = "/sbin/reload traefik || /sbin/restart traefik || /sbin/start traefik"

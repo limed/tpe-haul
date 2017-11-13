@@ -13,7 +13,12 @@ defaultEntryPoints = ["http","https"]
     address = ":443"
     [entryPoints.https.tls]
     MinVersion = "VersionTLS12"
-
+{{ if exists "/config/Key" -}}
+{{ if exists "/config/Cert" -}}
+      [[entryPoints.https.tls.certificates]]
+      CertFile = "/etc/traefik/site.cert"
+      KeyFile = "/etc/traefik/site.key"
+{{end}}{{end}}
 [web]
 address = ":8082"
 
