@@ -1,6 +1,6 @@
 [template]
 src = "site.cert.tmpl"
-dest = "/etc/traefik/site.cert.tmpl"
+dest = "/etc/traefik/site.cert"
 prefix = "/%%STACK%%/%%ENVIRONMENT%%"
 
 uid = 0

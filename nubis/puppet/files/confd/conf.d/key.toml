@@ -1,6 +1,6 @@
 [template]
 src = "site.key.tmpl"
-dest = "/etc/traefik/site.key.tmpl"
+dest = "/etc/traefik/site.key"
 prefix = "/%%STACK%%/%%ENVIRONMENT%%"
 
 uid = 0
