@@ -7,11 +7,11 @@ nubis::static { 'tpe':
   aliases       =>  [
     {
       alias => '/free-fox',
-      path  => "/data/${project_name}/${name}"
+      path  => "/data/${project_name}/tpe"
     },
     {
       alias => '/firefox',
-      path  => "/data/${project_name}/${name}"
+      path  => "/data/${project_name}/tpe"
     }
   ],
   rewrites      => [
