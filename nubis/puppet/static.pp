@@ -10,6 +10,7 @@ define nubis::static (
   $redirectmatch_regexp=[],
   $redirectmatch_dest=[],
   $rewrites=[],
+  $aliases=[],
   $custom_fragment=undef,
   $directories=undef,
   $error_documents=undef,
@@ -48,6 +49,8 @@ define nubis::static (
     access_log_format    => $access_log_format,
 
     headers              => $all_headers,
+
+    aliases              => $aliases,
 
     rewrites             => concat($default_rewrites, $rewrites),
 
