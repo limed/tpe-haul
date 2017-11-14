@@ -86,7 +86,8 @@ module "worker" {
   ssh_key_name  = "${var.ssh_key_name}"
   min_instances = 2
   wait_for_capacity_timeout = "20m"
-  nubis_sudo_groups = "${var.nubis_sudo_groups}"
+  nubis_sudo_groups   = "${var.nubis_sudo_groups}"
+  scale_load_defaults = true
 }
 
 module "load_balancer_web" {
@@ -124,7 +125,8 @@ module "ci" {
   security_group_custom = true
   security_group        = "${aws_security_group.ci.id}"
   wait_for_capacity_timeout = "20m"
-  nubis_sudo_groups = "${var.nubis_sudo_groups}"
+  nubis_sudo_groups     = "${var.nubis_sudo_groups}"
+  scale_load_defaults   = true
 }
 
 module "load_balancer_ci" {
