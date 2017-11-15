@@ -3,6 +3,9 @@ nubis::static { 'tpe':
   serveraliases => [
     'tpe.allizom.org',
     'tpe.mozilla.org',
+    'www.mozilla.com.tw',
+    'www.tpe.allizom.org',
+    'www.tpe.mozilla.org'
   ],
   aliases       =>  [
     {
