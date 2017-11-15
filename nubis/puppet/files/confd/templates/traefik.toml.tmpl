@@ -62,10 +62,16 @@ onHostRule = false
 
 [[acme.domains]]
 main = "tpe.mozilla.org"
+sans = [
+    "www.tpe.mozilla.org"
+]
 
 {{ else }}
 
 [[acme.domains]]
 main = "tpe.allizom.org"
+sans = [
+    "www.tpe.allizom.org"
+]
 
 {{ end }}
