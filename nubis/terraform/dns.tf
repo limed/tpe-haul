@@ -13,7 +13,7 @@ resource "aws_route53_zone" "hosted_zone" {
   }
 }
 
-resource "aws_route53_zone" "apex" {
+resource "aws_route53_record" "apex" {
   zone_id = "${aws_route53_zone.hosted_zone.id}"
 
   name    = "${lookup(var.dns_name, var.environment)}"
