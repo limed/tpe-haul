@@ -8,6 +8,5 @@ module "tpe" {
   role         = "${module.worker.role}"
 
   site_name     = "tpe"
-  site_index    = "index.htm"
   haul_git_repo = "https://github.com/limed/tpe-haul"
 }
