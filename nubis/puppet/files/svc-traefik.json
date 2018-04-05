@@ -1,12 +1,13 @@
 {
   "service": {
-    "name": "haul-frontend",
-    "port": 8082,
+    "name": "haul-traefik",
+    "port": 9109,
     "tags": [
-      "%%ENVIRONMENT%%"
+      "%%ENVIRONMENT%%",
+      "metrics"
     ],
     "check": {
-       "http": "http://localhost:8082/health",
+       "http": "http://localhost:9109/ping",
        "interval": "10s",
        "timeout": "1s"
     }

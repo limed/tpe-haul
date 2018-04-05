@@ -42,7 +42,6 @@ https://static.mozilla.com:
   stage: https://static.allizom.org
 https://tlscanary.mozilla.org:
   links: 1
-  lint: 1
 https://website-archive.mozilla.org:
   #links: 1
   stage: https://website-archive.allizom.org
@@ -50,3 +49,17 @@ https://www-archive.mozilla.org:
   stage: https://www-archive.allizom.org
 https://www.mozilla.net:
   prod_only: true
+https://iot.mozilla.org:
+  links: 1
+https://design.firefox.com:
+  links: 1
+  stage: https://design.allizom.org
+https://ccadb.allizom.org:
+  links: 1
+  stage_only: 1
+https://getfirebug.allizom.org:
+  links: 1
+  stage_only: 1
+https://mozqa.allizom.org:
+  links: 1
+  stage_only: 1

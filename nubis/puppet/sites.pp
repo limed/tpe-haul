@@ -23,8 +23,8 @@ nubis::static { 'tpe':
       rewrite_rule => [ '^/$ https://www.mozilla.org/zh-TW/ [R=temp]' ]
     },
     {
-      comment       => "This needs to have a L flag to make sure it doesn't catch firefox*",
-      rewrite_rule  => [ '^/(firefox(/[\.a-z0-9]+)?/(firstrun|tour|whatsnew).*) https://www.mozilla.org/$1 [R=permanent,L]' ]
+      comment      => "This needs to have a L flag to make sure it doesn't catch firefox*",
+      rewrite_rule => [ '^/(firefox(/[\.a-z0-9]+)?/(firstrun|tour|whatsnew).*) https://www.mozilla.org/$1 [R=permanent,L]' ]
     },
     {
       comment      => 'This need to precede the previous rule',
