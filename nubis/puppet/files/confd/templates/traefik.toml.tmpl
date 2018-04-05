@@ -1,10 +1,32 @@
-debug = true
+{{if exists "/config/TraefikConfigVersion" }}
+# This is configuration version {{ getv "/config/TraefikConfigVersion" }}
+{{end}}
+
+defaultEntryPoints = ["http","https"]
+checkNewVersion = false
+
+{{ $debug := ( getv "/config/Debug" "false" ) }}
+{{ if ne $debug "false" }}
 logLevel = "DEBUG"
+acmeLogging = true
+{{ else }}
+logLevel = "INFO"
+acmeLogging = false
+{{ end }}
 
 MaxIdleConnsPerHost = 1000
-defaultEntryPoints = ["http","https"]
+
+[traefiklog]
+  filepath = "/var/log/traefik_error.log"
+  format   = "json"
+
+[accessLog]
+  filePath = "/var/log/traefik.log"
+  format = "json"
 
 [entryPoints]
+  [entryPoints.traefik]
+    address = ":9109"
   [entryPoints.http]
     address = ":80"
      [entryPoints.http.redirect]
@@ -13,25 +35,37 @@ defaultEntryPoints = ["http","https"]
     address = ":443"
     [entryPoints.https.tls]
     MinVersion = "VersionTLS12"
+
 {{ if exists "/config/Key" -}}
 {{ if exists "/config/Cert" -}}
       [[entryPoints.https.tls.certificates]]
       CertFile = "/etc/traefik/site.cert"
       KeyFile = "/etc/traefik/site.key"
 {{end}}{{end}}
-[web]
-address = ":8082"
+
+[ping]
+[api]
+  [api.statistics]
+[metrics]
+  [metrics.prometheus]
 
 [consul]
 endpoint = "127.0.0.1:8500"
 watch = true
 prefix = "{{ getv "/config/ServiceName" }}/{{ getv "/config/EnvironmentName" }}/config"
 
+# Use HTTP-01 challenges
+[acme.httpChallenge]
+  entryPoint = "http"
+
 [acme]
 # Handle when this isn't set
 email="{{ getv "/config/Email/Destination" }}"
 storage = "{{ getv "/config/ServiceName" }}/{{ getv "/config/EnvironmentName" }}/acme"
 entryPoint = "https"
+
+# Doesn't fallback to https:// checks, bummer
+#dnsProvider = "route53"
 
 # Only set CA server in stage where this consul key exists
 {{if exists "/config/LetsEncrypt/CAServer" }}

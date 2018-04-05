@@ -9,5 +9,5 @@ module "tpe" {
 
   site_name     = "tpe"
   site_index    = "index.htm"
-  site_git_repo = "https://github.com/limed/tpe-haul"
+  haul_git_repo = "https://github.com/limed/tpe-haul"
 }

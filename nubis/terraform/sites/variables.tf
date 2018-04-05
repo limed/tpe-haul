@@ -18,10 +18,6 @@ variable "role" {}
 
 variable "site_name" {}
 
-variable "site_index" {
-  default = "index.html"
-}
-
 variable "site_poll_frequency" {
   default = "H/10 * * * *"
 }
@@ -34,6 +30,6 @@ variable "site_git_branches" {
   default = "master"
 }
 
-variable "site_git_repo" {
+variable "haul_git_repo" {
   default = "https://github.com/mozilla-it/haul.git"
 }
