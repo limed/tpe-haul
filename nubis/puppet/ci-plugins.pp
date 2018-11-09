@@ -241,7 +241,7 @@ jenkins::plugin { 'scm-api':
 }
 
 jenkins::plugin { 'script-security':
-  version => '1.41'
+  version => '1.44'
 }
 
 jenkins::plugin { 'ssh-credentials':
